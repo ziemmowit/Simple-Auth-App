@@ -13,5 +13,12 @@
         %header
           %h1 Yet Another CMS - Starter App
 
+          #user-bar
+            = render "devise/shared/user_menu"
+
+        - if notice
+          .alert.alert-success= notice
+        - if alert
+          .alert.alert-danger= alert
         = yield
 

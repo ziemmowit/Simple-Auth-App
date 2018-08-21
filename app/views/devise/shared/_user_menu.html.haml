@@ -1,0 +1,4 @@
+- if user_signed_in?
+	Witaj #{current_user.name}, #{link_to 'Edycja', edit_user_registration_path}, #{link_to 'Wyloguj', destroy_user_session_path, method: :delete}
+- else
+	=link_to ('Zaloguj się').html_safe, user_session_path
