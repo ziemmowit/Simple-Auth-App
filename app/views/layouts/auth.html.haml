@@ -9,7 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper-main.container
-      #wrapper-inner.col-md-6.offset-3
+      #wrapper-inner.auth
         %nav#user-menu
           = render "devise/shared/user_menu"
         %header
@@ -20,5 +20,6 @@
           .alert.alert-success= notice
         - if alert
           .alert.alert-danger= alert
+
         = yield
 
