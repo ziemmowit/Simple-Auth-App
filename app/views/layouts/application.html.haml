@@ -9,12 +9,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #wrapper-main.container
-      #wrapper-inner
+      #wrapper-inner.auth
+        %nav#user-menu
+          = render "devise/shared/user_menu"
         %header
-          %h1 Yet Another CMS - Starter App
-
-          #user-bar
-            = render "devise/shared/user_menu"
+          %h1
+            =link_to "Y".html_safe, root_path, {class: 'logo-square'}
 
         - if notice
           .alert.alert-success= notice

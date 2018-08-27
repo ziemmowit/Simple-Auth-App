@@ -1,17 +1,16 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-group
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-  .form-group
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password", class: 'form-control'
-  - if devise_mapping.rememberable?
-    .form-group.form-check
-      = f.check_box :remember_me, class: 'form-check-input'
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in", class: 'btn btn-success'
-= render "devise/shared/links"
+.form-auth
+  %h2= t :'auth.log_in_invite'
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :email, class: 'sr-only'
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t(:"auth.email"), class: 'form-control input-first'
+      = f.label :password, class: 'sr-only'
+      = f.password_field :password, autocomplete: "current-password", placeholder: t("auth.password"), class: "form-control input-last"
+    - if devise_mapping.rememberable?
+      .form-group.form-check
+        = f.check_box :remember_me, class: 'form-check-input'
+        = f.label :remember_me
+    .actions
+      = f.submit t("auth.log_in"), class: 'btn btn-primary btn-block'
+  
+  = render "devise/shared/links"

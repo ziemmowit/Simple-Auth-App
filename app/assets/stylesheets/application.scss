@@ -1,2 +1,91 @@
-@import "bootstrap";
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap';
+@import 'variables';
 @import 'mixins';
+
+body {
+  background: $light;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+header {
+}
+
+h1 {
+  margin: 0;
+  padding: 15pt 0;
+  text-align: center;
+
+  .logo-square {
+    @include border-radius(10px);
+    background: $red;
+    color: $light;
+    display: block;
+    font-size: 1.75rem;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 50px;
+
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+.auth {
+  display: table;
+  margin: 30px auto 15px;
+  max-width: 330px;
+
+  .form-auth {
+    form {
+      padding: 10px;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+
+    input.input-first {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    input.input-inside {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    input.input-last {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  
+  #user-menu {
+    text-align: right;
+  }
+
+}
