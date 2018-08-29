@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true, allow_blank: false
   validates :last_name, presence: true, allow_blank: false
+  validates :role, presence: true, allow_blank: false
 
   def name
     begin
@@ -16,10 +17,12 @@ class User < ApplicationRecord
   end
 
   def role_name
-    role_types[role]
+    role < role_types.count ? role_types[role] : role_types[2]
   end
 
-  def role_types
+  private
+
+def role_types
     [:inactive, :admin, :normal]
   end
 end
