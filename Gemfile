@@ -32,6 +32,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'rspec-rails', '~> 3.7'
+  gem 'simplecov', require: false
   gem "factory_bot_rails"
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
